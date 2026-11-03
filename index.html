@@ -1,0 +1,262 @@
+!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume - แนะนำตัวเอง</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Font Prompt -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Prompt', sans-serif;
+        }
+        /* Style เพิ่มเติมสำหรับรูปภาพแทนสัญลักษณ์ @ เพื่อป้องกันสแปม */
+        .at-symbol-img {
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-color: #4B5563;
+            mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224c32.7 0 63.8-7 91.8-19.6l-18.4-32.8C305.5 438.4 281.3 444 256 444c-103.7 0-188-84.3-188-188S152.3 68 256 68s188 84.3 188 188c0 32.5-10.4 64.9-29.3 90.3-12.7 17.1-30.8 25.7-48.7 25.7-17.6 0-29.3-10.3-29.3-27.5 0-15.3 7.8-38.3 12.3-51.5l14.1-41.2c2.1-6.1 3.2-12.5 3.2-18.8 0-29.8-21.7-52.5-52.5-52.5-51.3 0-94.8 45.8-94.8 98 0 35.8 24.2 61.2 56.4 61.2 18.2 0 35.3-7.6 48.7-20.2 12.8 22.3 36.1 35 62.9 35 34.6 0 67.2-17.1 89.2-46.7C464.8 322.8 476 289.9 476 256 476 132.3 379.7 32 256 32zm0 241.5c-15.3 0-26.3-11.2-26.3-25.3 0-20.8 17.3-46.7 34.8-46.7 12.3 0 20.3 8.7 20.3 20.8 0 15.1-12.6 51.2-28.8 51.2z"/></svg>') no-repeat center;
+            -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224c32.7 0 63.8-7 91.8-19.6l-18.4-32.8C305.5 438.4 281.3 444 256 444c-103.7 0-188-84.3-188-188S152.3 68 256 68s188 84.3 188 188c0 32.5-10.4 64.9-29.3 90.3-12.7 17.1-30.8 25.7-48.7 25.7-17.6 0-29.3-10.3-29.3-27.5 0-15.3 7.8-38.3 12.3-51.5l14.1-41.2c2.1-6.1 3.2-12.5 3.2-18.8 0-29.8-21.7-52.5-52.5-52.5-51.3 0-94.8 45.8-94.8 98 0 35.8 24.2 61.2 56.4 61.2 18.2 0 35.3-7.6 48.7-20.2 12.8 22.3 36.1 35 62.9 35 34.6 0 67.2-17.1 89.2-46.7C464.8 322.8 476 289.9 476 256 476 132.3 379.7 32 256 32zm0 241.5c-15.3 0-26.3-11.2-26.3-25.3 0-20.8 17.3-46.7 34.8-46.7 12.3 0 20.3 8.7 20.3 20.8 0 15.1-12.6 51.2-28.8 51.2z"/></svg>') no-repeat center;
+            vertical-align: middle;
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased pt-20">
+
+    <!--ข้อ 9 & 10: Navbar แบบ Toggle Responsive และ Anchor Links -->
+    <nav class="bg-indigo-900 text-white fixed top-0 left-0 w-full z-50 shadow-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Brand Logo / Title -->
+            <a href="#about" class="text-xl font-bold tracking-wide text-indigo-200 hover:text-white transition">
+                <i class="fa-solid fa-code me-2"></i>My Resume
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#about" class="hover:text-indigo-300 transition duration-200 py-1">เกี่ยวกับฉัน</a>
+                <a href="#education" class="hover:text-indigo-300 transition duration-200 py-1">การศึกษา</a>
+                <a href="#skills" class="hover:text-indigo-300 transition duration-200 py-1">ทักษะ (Skills)</a>
+                <a href="#projects" class="hover:text-indigo-300 transition duration-200 py-1">ผลงาน</a>
+                <a href="#contact" class="hover:text-indigo-300 transition duration-200 py-1">ติดต่อ</a>
+            </div>
+
+            <!-- Mobile Hamburger Button -->
+            <button id="menu-btn" class="md:hidden text-2xl focus:outline-none p-1 rounded hover:bg-indigo-800">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-indigo-800 px-4 pt-2 pb-4 space-y-2 border-t border-indigo-700">
+            <a href="#about" class="mobile-link block py-2 px-3 hover:bg-indigo-700 rounded transition">เกี่ยวกับฉัน</a>
+            <a href="#education" class="mobile-link block py-2 px-3 hover:bg-indigo-700 rounded transition">การศึกษา</a>
+            <a href="#skills" class="mobile-link block py-2 px-3 hover:bg-indigo-700 rounded transition">ทักษะ (Skills)</a>
+            <a href="#projects" class="mobile-link block py-2 px-3 hover:bg-indigo-700 rounded transition">ผลงาน</a>
+            <a href="#contact" class="mobile-link block py-2 px-3 hover:bg-indigo-700 rounded transition">ติดต่อ</a>
+        </div>
+    </nav>
+
+    <!-- Container หลัก -->
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+        <!-- ข้อ 8: Section เกี่ยวกับตัวฉัน (About Me) -->
+        <section id="about" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100">
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <!-- ข้อ 1: รูป Display แบบวงกลม -->
+                <div class="flex-shrink-0">
+                    <img src="IMG_20261028_141922.jpg" 
+                         alt="รูปโปรไฟล์" 
+                         class="w-44 h-44 rounded-full object-cover border-4 border-indigo-500 shadow-md">
+                </div>
+
+                <div class="text-center md:text-left flex-grow">
+                    <!-- ข้อ 2: ชื่อ-นามสกุลแบบ h1 -->
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">นายคุณานนท์ ชัยภูติพร</h1>
+                    
+                    <div class="text-lg text-gray-600 mb-3 space-y-1">
+                        <!-- ข้อ 3: สาขาวิชาที่นักศึกษาสังกัด ใช้ em -->
+                        <p>สาขาวิชา: <em class="text-indigo-600 font-semibold not-italic">วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์</em></p>
+                        <!-- ข้อ 4: ชื่อคณะ -->
+                        <p>คณะ: <span class="font-medium text-gray-700">วิศวกรรมศาสตร์และเทคโนโลยี</span></p>
+                        <!-- ข้อ 5: ชื่อสถาบันพร้อมลิงก์ไปยังเว็บไซต์สถาบัน -->
+                        <p>สถาบัน: 
+                            <a href="http://pim.ac.th" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 underline font-medium inline-flex items-center gap-1">
+                                สถาบันการจัดการปัญญาภิวัฒน์ <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                            </a>
+                        </p>
+                    </div>
+
+                    <!-- ข้อ 6: ประวัติโดยย่อของตนเอง -->
+                    <p class="text-gray-600 bg-indigo-50 p-4 rounded-xl border-l-4 border-indigo-500 text-sm md:text-base leading-relaxed">
+                        <strong>แนะนำตัวสั้น ๆ:</strong> สวัสดีครับผมนายคุณานนท์ ชัยภูติพร ผมเป็นนักศึกษาอยู่ที่ PIM คณะวิศวกรรมศาสตร์และเทคโนโลยี สาขาวิชาวิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์ ชอบและมีความหลงใหลในการเขียนโค้ด การออกแบบระบบ และการเรียนรู้เทคโนโลยีใหม่ๆ มุ่งมั่นที่จะพัฒนาตนเองให้เป็น Full-Stack Developer 
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ข้อ 7: การใช้เส้นแบ่งย่อหน้า hr -->
+        <hr class="my-8 border-t-2 border-gray-200 rounded">
+
+        <!-- ข้อ 8: Section การศึกษา (Education) -->
+        <section id="education" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100">
+            <h2 class="text-2xl font-bold text-indigo-900 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-graduation-cap text-indigo-600"></i> ประวัติการศึกษา (Education)
+            </h2>
+            
+            <div class="space-y-6 relative border-l-2 border-indigo-200 ml-4 pl-6">
+                <div class="relative">
+                    <span class="absolute -left-[31px] top-1.5 w-4 h-4 bg-indigo-600 rounded-full border-4 border-white"></span>
+                    <h3 class="text-xl font-bold text-gray-800">ปริญญาตรี วิศวกรรมศาสตรบัณฑิต (วิศวกรรมคอมพิวเตอร์และปัญญาประดิษฐ์)</h3>
+                    <p class="text-indigo-600 font-medium">สถาบันการจัดการปัญญาภิวัฒน์ </p>
+                    <p class="text-gray-600 text-sm mt-1">เกรดเฉลี่ยสะสม: 2.92  </p>
+                </div>
+
+                <div class="relative">
+                    <span class="absolute -left-[31px] top-1.5 w-4 h-4 bg-indigo-300 rounded-full border-4 border-white"></span>
+                    <h3 class="text-lg font-bold text-gray-800">มัธยมศึกษาตอนปลาย (แผนการเรียน วิทย์-คณิต)</h3>
+                    <p class="text-indigo-600 font-medium">	โรงเรียนนวมินทราชินูทิศ เบญจมราชาลัย  </p>
+                    <p class="text-gray-600 text-sm mt-1">เกรดเฉลี่ยสะสม: 2.78 </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ข้อ 7: การใช้เส้นแบ่งย่อหน้า hr -->
+        <hr class="my-8 border-t-2 border-gray-200 rounded">
+
+        <!-- ข้อ 8: Section Skills -->
+        <section id="skills" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100">
+            <h2 class="text-2xl font-bold text-indigo-900 mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-laptop-code text-indigo-600"></i> ทักษะและความสามารถ (Skills)
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Programming Languages -->
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                    <h3 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-code text-indigo-500"></i> Languages
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">HTML5 / CSS</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">JavaScript </span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Python</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">SQL</span>
+                    </div>
+                </div>
+
+                <!-- Frameworks & Tools -->
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                    <h3 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-cubes text-indigo-500"></i> Frameworks & Tools
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Node.js</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Git & GitHub</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">VS Code</span>
+                    </div>
+                </div>
+
+                <!-- Soft Skills -->
+                <div class="p-4 bg-gray-50 rounded-xl border border-gray-100">
+                    <h3 class="font-bold text-gray-800 mb-3 flex items-center gap-2">
+                        <i class="fa-solid fa-users text-indigo-500"></i> Soft Skills
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Problem Solving</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Teamwork</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Communication</span>
+                        <span class="px-3 py-1 bg-white border border-gray-200 text-xs font-medium rounded-full text-gray-700">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ข้อ 7: การใช้เส้นแบ่งย่อหน้า hr -->
+        <hr class="my-8 border-t-2 border-gray-200 rounded">
+
+        <!-- ข้อ 11: Section ผลงานเพิ่มเติมพร้อม Grid Responsive (Desktop 4 แถว/คอลัมน์, Tablet 2 แถว/คอลัมน์, มือถือ 1 แถว/คอลัมน์) -->
+        <section id="projects" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100">
+            <h2 class="text-2xl font-bold text-indigo-900 mb-2 flex items-center gap-2">
+                <i class="fa-solid fa-folder-open text-indigo-600"></i> ผลงานเด่น (Projects)
+            </h2>
+            <p class="text-gray-500 text-sm mb-6">ไม่มี</p>
+
+            </div>
+        </section>
+
+        <!-- ข้อ 7: การใช้เส้นแบ่งย่อหน้า hr -->
+        <hr class="my-8 border-t-2 border-gray-200 rounded">
+
+        <!-- ข้อ 12: เพิ่มช่องทางติดต่อกลับ -->
+        <section id="contact" class="bg-white rounded-2xl shadow-sm p-6 md:p-8 mb-8 border border-gray-100">
+            <h2 class="text-2xl font-bold text-indigo-900 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-address-book text-indigo-600"></i> ช่องทางการติดต่อ (Contact Information)
+            </h2>
+
+            <!-- ข้อ 12.1: ใช้ Ordered List (ol) -->
+            <ol class="list-decimal list-inside space-y-3 text-gray-700 bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <!-- ข้อ 12.2: อีเมล์สถาบันฯ (ใช้ภาพแทน @ เพื่อป้องกันสแปม) -->
+                <li class="pl-2">
+                    <strong class="text-gray-900">อีเมลสถาบัน: ไม่มี</strong> 
+                    <span class="bg-white px-3 py-1 rounded border border-gray-300 font-mono text-sm inline-flex items-center">
+                        <span class="at-symbol-img" title="at"></span>
+                    </span>
+                    <span class="text-xs text-gray-500 ml-2 block sm:inline"> </span>
+                </li> 
+
+                <!-- ข้อ 12.3: เบอร์โทรศัพท์ (หลีกเลี่ยงการใช้เบอร์จริง) -->
+                <li class="pl-2">
+                    <strong class="text-gray-900">เบอร์โทรศัพท์:</strong> 
+                    <span class="font-mono">0xx xxxx xxx</span> (เบอร์ติดต่อสำหรับการสมัครงาน)
+                </li>
+
+                <!-- ข้อ 12.4: ที่อยู่ (หลีกเลี่ยงการใช้สถานที่จริง) -->
+                <li class="pl-2">
+                    <strong class="text-gray-900">ที่อยู่ติดต่อ:</strong> 
+                    <span>99/99  แขวงหนองระแหง เขตคลองสามวา กรุงเทพมหานคร 1000000</span>
+                </li>
+            </ol>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-indigo-950 text-indigo-200 text-center py-6 text-sm border-t border-indigo-900">
+        <p>© 2026 Somchai Jaidee. All rights reserved. Created with HTML, CSS & Tailwind.</p>
+    </footer>
+
+    <!-- JavaScript สำหรับควบคุม Toggle Navbar ใน Mobile -->
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle แสดง/ซ่อน เมนู
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if (mobileMenu.classList.contains('hidden')) {
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            } else {
+                menuIcon.classList.remove('fa-bars');
+                menuIcon.classList.add('fa-xmark');
+            }
+        });
+
+        // เมื่อกดที่ ลิงก์ บน Mobile Navbar ให้ทำการซ่อนเมนูปิดอัตโนมัติ
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.classList.remove('fa-xmark');
+                menuIcon.classList.add('fa-bars');
+            });
+        });
+    </script>
+</body>
+</html>
